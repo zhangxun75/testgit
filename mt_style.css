@@ -1,0 +1,93 @@
+/* this is the clipping region for the menu. it's width and height get set by script, depending on the size of the items table */
+.mtDropdownMenu {
+	position:absolute;
+	overflow:hidden;
+	left:-1000px;
+	top:-1000px;
+	
+	}
+
+/* this is the main container for the menu itself. it's width and height get set by script, depending on the size of the items table */
+.mtDropdownMenu .content {
+	position:absolute;
+
+	}
+
+/* this table comprises all menu items. each TR is one item. It is relatively positioned so that the shadow and background transparent divs can be positioned underneath it */
+.mtDropdownMenu .items {
+	position:relative;
+	left:0px; top:0px;
+	border:1px solid #cff4ff;
+	z-index:2;
+	}
+
+.mtDropdownMenu.top .items {
+	border-top:none;
+	}
+
+/* each TR.item is one menu item */
+.mtDropdownMenu .item {
+    color:white;
+    font-size:10px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    text-decoration:none;
+	/* this is a hack for mac/ie5, whom incorrectly cascades the border properties of the parent table to each row */
+	border:none;
+	cursor:pointer;
+	cursor:hand;
+	}
+
+/* this DIV is the semi-transparent white background of each menu. the -moz-opacity is a proprietary way to get transparency in mozilla, the filter is for IE/windows 5.0+. */
+/* 下拉菜单背景透明 */
+.mtDropdownMenu .background {
+	position:absolute;
+	left:0px; top:0px;
+	z-index:0;
+	-moz-opacity:.8;
+	filter:alpha(opacity=70);
+	}
+
+/* 下拉菜单右阴影透明 */
+.mtDropdownMenu .shadowRight {
+	position:absolute;
+	z-index:3;
+	top:3px; width:2px;
+	filter:alpha(opacity=50);
+	}
+
+/* 下拉菜单下阴影透明 */
+.mtDropdownMenu .shadowBottom {
+	position:absolute;
+	z-index:1;
+	left:3px; height:2px;
+	-moz-opacity:.4;
+	filter:alpha(opacity=50);
+	}
+
+/* 鼠标经过颜色 */
+.mtDropdownMenu .item.hover {
+	background:#ffffff;
+		color: #FF6600;
+	}
+
+/* this is either the dingbat that indicates there is a submenu, or a spacer gif in it's place. We give it extra margin to create some space between the text and the dingbat */
+.mtDropdownMenu .item img {
+   margin-LEFT:10px;
+	}
+
+A:link {
+    color:#FFFFFF;
+	TEXT-DECORATION: none
+}
+ A:visited {
+    color:#FFFFFF;
+	TEXT-DECORATION: none
+}
+A:hover {
+    color:#FF6600;
+	TEXT-DECORATION: none
+}
+A:active {
+    color:ffffff;
+	TEXT-DECORATION: none
+}
